@@ -1,0 +1,29 @@
+{
+  "Users": [
+    {
+      "Username": "12B_Admin",
+      "Password": "WyO/IfVQNRp4oFIgwGTrhJOB4Eiy6+U0TSlfNesc2T8=", //1234int
+      "SupportedLicensees": [ "12B" ]
+    },
+    {
+      "Username": "12B_User",
+      "Password": "WyO/IfVQNRp4oFIgwGTrhJOB4Eiy6+U0TSlfNesc2T8=",
+      "SupportedLicensees": [ "12B" ]
+    },
+    {
+      "Username": "12B_Link",
+      "Password": "WyO/IfVQNRp4oFIgwGTrhJOB4Eiy6+U0TSlfNesc2T8=",
+      "SupportedLicensees": [ "12B" ]
+    },
+    {
+      "Username": "12B_API",
+      "Password": "WyO/IfVQNRp4oFIgwGTrhJOB4Eiy6+U0TSlfNesc2T8=",
+      "SupportedLicensees": [ "12B" ]
+    },
+    {
+      "Username": "12B_Service",
+      "Password": "WyO/IfVQNRp4oFIgwGTrhJOB4Eiy6+U0TSlfNesc2T8=",
+      "SupportedLicensees": [ "12B" ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Functions SiteId="32" SiteName="Aff_Int_Api">
+  <Function Name="Admin_Auth">
+    <Setting Key="Aff_Con_CheckPermission" SpName="Aff_Con_CheckPermission" DbName="DBAFF.Affiliate.wsv_afinet" />
+    <Setting Key="Aff_Recheckin" SpName="Aff_Recheckin" DbName="DBAFF.Affiliate.wsv_afinet" />
+    <Setting Key="Aff_Admin_Login" SpName="Aff_Admin_Login" DbName="DBAFF.Affiliate.wsv_afinet" />
+    <Setting Key="Aff_Admin_PolicySel" SpName="Aff_Admin_PolicySel" DbName="DBAFF.Affiliate.wsv_afinet" />
+    <Setting Key="Aff_CheckIn" SpName="Aff_CheckIn" DbName="DBAFF.Affiliate.wsv_afinet" />
+    <Setting Key="Aff_Logout" SpName="Aff_Logout" DbName="DBAFF.Affiliate.wsv_afinet" />
+  </Function>
+</Functions>
