@@ -1,5 +1,4 @@
 ﻿using Aff.Int.API.Core.Constants;
-using Aff.Int.API.Core.Extensions;
 using Aff.Int.API.Core.Models;
 using Aff.Int.API.Core.Models.Options;
 using Microsoft.Extensions.Options;

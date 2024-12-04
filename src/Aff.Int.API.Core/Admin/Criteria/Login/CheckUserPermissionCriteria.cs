@@ -4,7 +4,7 @@ using Fanex.Data.Repository;
 
 namespace Aff.Int.API.Core.Admin.Criteria.Login
 {
-    public class CheckAdminPermissionCriteria : CriteriaBase
+    public class CheckUserPermissionCriteria : CriteriaBase
     {
         private const string SP_NAME = "Aff_Admin_PolicySel";
 

@@ -1,7 +1,7 @@
 ﻿
-namespace Aff.Int.API.Core.Admin.Models
+namespace Aff.Int.API.Core.Admin.Models.Login
 {
-    public class AdminPermissionModel
+    public class UserPermissionModel
     {
         public string FunctionName { get; set; }
 

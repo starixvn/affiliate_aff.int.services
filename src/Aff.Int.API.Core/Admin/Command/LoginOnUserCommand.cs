@@ -2,9 +2,9 @@
 using Fanex.Data;
 using Fanex.Data.Repository;
 
-namespace Aff.Int.API.Core.Admin.Criteria.Login
+namespace Aff.Int.API.Core.Admin.Command
 {
-    public class LoginOnAdminCriteria : CriteriaBase
+    public class LoginOnUserCommand : NonQueryCommand
     {
         private const string SP_NAME = "Aff_CheckIn";
 
@@ -23,5 +23,8 @@ namespace Aff.Int.API.Core.Admin.Criteria.Login
         public string Ip { get; set; }
 
         public int SubAccId { get; } = SystemSetting.SubAccId_AdminSite;
+
+        [SpParam(SqlParamName = "On_UserId")]
+        public int OnUserId { get; set; }
     }
 }

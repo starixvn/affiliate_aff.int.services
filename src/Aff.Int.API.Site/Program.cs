@@ -21,7 +21,7 @@ var startup = new Startup(builder.Configuration);
 startup.ConfigureServices(builder.Services);
 
 var app = builder.Build();
-app.MapGet("/", () => "Hello, Welcome to Internal Aff API!");
+app.MapGet("/", () => "Hello, Welcome to Internal Aff 3 Tier API!");
 
 // Configure the HTTP request pipeline.
 startup.Configure(app, app.Environment);
