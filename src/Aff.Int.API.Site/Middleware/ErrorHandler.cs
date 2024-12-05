@@ -4,29 +4,20 @@ using Newtonsoft.Json;
 
 namespace Aff.Int.API.Core.Middleware
 {
-    public class ErrorHandler
+    public class ErrorHandler(RequestDelegate next, ILogger<ErrorHandler> logger)
     {
         private const int ServerErrorCode = 500;
-        private readonly RequestDelegate _next;
-        private readonly ILogger<ErrorHandler> _logger;
 
-        public ErrorHandler(RequestDelegate next, ILogger<ErrorHandler> logger)
-        {
-            _next = next;
-            _logger = logger;
-        }
         public async Task Invoke(HttpContext context)
         {
-            var error = context.Features[typeof(IExceptionHandlerFeature)] as IExceptionHandlerFeature;
-
-            if (error != null && error.Error != null)
+            if (context.Features[typeof(IExceptionHandlerFeature)] is IExceptionHandlerFeature error && error.Error != null)
             {
                 await HandleError(context, error.Error);
             }
 
             try
             {
-                await _next.Invoke(context);
+                await next.Invoke(context);
             }
             catch (Exception exception)
             {
@@ -38,7 +29,7 @@ namespace Aff.Int.API.Core.Middleware
         {
             context.Response.StatusCode = ServerErrorCode;
             var errorMsg = ErrorMessageHelper.GenerateMessage(context, error);
-            _logger.LogCritical(error, errorMsg);
+            logger.LogCritical(error, errorMsg);
             await context.Response.WriteAsJsonAsync(JsonConvert.SerializeObject(new
             {
                 State = "Internal Server Error",

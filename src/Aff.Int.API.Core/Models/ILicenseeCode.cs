@@ -1,4 +1,4 @@
-﻿namespace Aff.Int.API.Core.Criteria
+﻿namespace Aff.Int.API.Core.Models
 {
     public interface ILicenseeCode
     {

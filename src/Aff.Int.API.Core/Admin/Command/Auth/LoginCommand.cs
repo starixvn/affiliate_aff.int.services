@@ -1,7 +1,7 @@
 ﻿using Fanex.Data;
 using Fanex.Data.Repository;
 
-namespace Aff.Int.API.Core.Admin.Command
+namespace Aff.Int.API.Core.Admin.Command.Auth
 {
     public class LoginCommand : NonQueryCommand
     {

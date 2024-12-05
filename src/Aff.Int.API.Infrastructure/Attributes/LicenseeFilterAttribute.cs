@@ -1,4 +1,4 @@
-﻿using Aff.Int.API.Core.Criteria;
+﻿using Aff.Int.API.Core.Models;
 using Aff.Int.API.Core.Models.Options;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;

@@ -2,7 +2,7 @@
 using Fanex.Data;
 using Fanex.Data.Repository;
 
-namespace Aff.Int.API.Core.Admin.Criteria.Login
+namespace Aff.Int.API.Core.Admin.Criteria.Auth
 {
     public class CheckUserPermissionCriteria : CriteriaBase
     {

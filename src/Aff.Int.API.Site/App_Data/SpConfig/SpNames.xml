@@ -8,4 +8,8 @@
     <Setting Key="Aff_CheckIn" SpName="Aff_CheckIn" DbName="DBAFF.Affiliate.wsv_afinet" />
     <Setting Key="Aff_Logout" SpName="Aff_Logout" DbName="DBAFF.Affiliate.wsv_afinet" />
   </Function>
+  <Function Name="Admin_Home">
+    <Setting Key="Aff_Admin_GeneralInfo_Sel" SpName="Aff_Admin_GeneralInfo_Sel" DbName="DBAFF.Affiliate.wsv_afinet" />
+    <Setting Key="Aff_UserOnlineList" SpName="Aff_UserOnlineList" DbName="DBAFF.Affiliate.wsv_afinet" />
+  </Function>
 </Functions>

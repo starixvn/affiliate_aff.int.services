@@ -1,8 +1,7 @@
-﻿using Aff.Int.API.Core.Admin.Command;
-using Aff.Int.API.Core.Admin.Criteria;
-using Aff.Int.API.Core.Admin.Criteria.Login;
-using Aff.Int.API.Core.Admin.Models.Login;
-using Aff.Int.API.Core.Admin.Params;
+﻿using Aff.Int.API.Core.Admin.Command.Auth;
+using Aff.Int.API.Core.Admin.Criteria.Auth;
+using Aff.Int.API.Core.Admin.Models.Auth;
+using Aff.Int.API.Core.Admin.Params.Auth;
 using Aff.Int.API.Core.Models.DTOs;
 using Aff.Int.API.Infrastructure.Constants;
 using Fanex.Data.Repository;
@@ -19,7 +18,11 @@ namespace Aff.Int.API.Core.Controllers.Admin
         [HttpGet]
         public async Task<bool> ReCheckinAsync(int onUserId)
         {
-            return await dynamicRepository.GetAsync<bool>(new ReCheckinCriteria { OnUserId = onUserId });
+            var command = new ReCheckinCommand { OnUserId = onUserId };
+
+            await dynamicRepository.ExecuteAsync(command);
+
+            return command.IsKickedOut;
         }
 
         [HttpPost]

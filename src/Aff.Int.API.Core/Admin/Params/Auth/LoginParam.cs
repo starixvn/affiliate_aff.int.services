@@ -1,7 +1,6 @@
-﻿
-using Aff.Int.API.Core.Params;
+﻿using Aff.Int.API.Core.Params;
 
-namespace Aff.Int.API.Core.Admin.Params
+namespace Aff.Int.API.Core.Admin.Params.Auth
 {
     public class LoginParam : BaseParam
     {

@@ -10,12 +10,10 @@ namespace Aff.Int.API.Core.Models
 
         [MaxLength(MaxLengthOfUserName)]
         [Required]
-        [JsonProperty("username")]
         public string Username { get; set; }
 
         [MaxLength(MaxLengthOfPassword)]
         [Required]
-        [JsonProperty("password")]
         public string Password { get; set; }
 
         public bool IsShowIpvn { get; set; } = true;

@@ -66,7 +66,7 @@ namespace Aff.Int.API.Core.Middleware
 
         public static void UseWhoAmICheck(this IApplicationBuilder app)
         {
-            Func<HttpContext, HealthReport, Task> customResponseWriter = async (context, report) =>
+            static async Task customResponseWriter(HttpContext context, HealthReport report)
             {
                 var result = JsonConvert.SerializeObject(
                     new
@@ -77,7 +77,7 @@ namespace Aff.Int.API.Core.Middleware
 
                 context.Response.ContentType = MediaTypeNames.Application.Json;
                 await context.Response.WriteAsync(result);
-            };
+            }
 
             app.UseHealthChecks("/whoami", options: new HealthCheckOptions
             {
@@ -87,17 +87,9 @@ namespace Aff.Int.API.Core.Middleware
             });
         }
 
-        internal class ContextInMemoryHelper : IHttpContextHelper
+        internal class ContextInMemoryHelper(IHttpContextAccessor httpContextAccessor, IMemoryCache cache) : IHttpContextHelper
         {
             private readonly TimeSpan ByPassUMCacheTime = TimeSpan.FromMinutes(30);
-            private readonly IHttpContextAccessor httpContextAccessor;
-            private readonly IMemoryCache cache;
-
-            public ContextInMemoryHelper(IHttpContextAccessor httpContextAccessor, IMemoryCache cache)
-            {
-                this.httpContextAccessor = httpContextAccessor;
-                this.cache = cache;
-            }
 
             public string GetSession(string key)
                 => cache.TryGetValue(BuildKey(key), out string value) ? value : string.Empty;
